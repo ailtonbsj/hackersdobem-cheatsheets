@@ -241,4 +241,40 @@ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart –columns
 
 # Automate SQL Injection - dump table/column
 sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 -D acuart -T users -C uname --dump
+
+# List disk
+fdisk -l
+
+# Manipulate partition and format
+fdisk /dev/sdX
+
+# inform the OS of partition table changes
+partprobe /dev/sdX
+
+# Multiple Disk Tool (soft RAID)
+sudo apt install mdadm
+
+# Create RAID0 with 2 devices
+mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sdX1 /dev/sdX2
+
+# Format disk as EXT4
+mkfs.ext4 /dev/md0
+
+# Space used in disks
+df -h
+
+# Status of soft RAID
+cat /proc/mdstat
+
+# Replicate file
+rsync -avz /path/to/file.txt /path/destination/
+
+# Edit crontab
+crontab -e
+
+# Backup tool
+duplicity /path/source file:///path/destination
+
+# Erase disk
+wipefs -a -f /dev/sdX
 ```
