@@ -124,7 +124,7 @@ netstat -anptu
 # Honeypot creator tool
 # https://github.com/technicaldada/pentbox
 
-# Resolve dns domain
+# Resolve dns domainclamscan -r /home
 host -t ns esr.rnp.br
 
 # Resolve dns domain
@@ -277,4 +277,47 @@ duplicity /path/source file:///path/destination
 
 # Erase disk
 wipefs -a -f /dev/sdX
+
+# Erase disk using DoD 5220.22-M
+shred -vfz -n 1 /dev/sdX
+
+# Steganography tool
+steghide embed -cf photo.jpg -ef msg.txt
+
+# Encrypt with AES 256
+openssl enc -aes-256-ctr -salt -in file.jpg -out crypted.ext
+
+# Digest hash with RIPEMD-160
+openssl dgst -ripemd160 file.txt
+
+# Check online SSL certificate
+openssl s_client -connect www.domain.tld:443 -status
+
+# Scan folder with ClamAV
+clamscan -r /home
+
+# Lenovo BIOS Simulator Center
+# https://download.lenovo.com/bsco
+
+# Clean ARP table
+ip -s -s neigh flush all
+
+# Clone MAC
+ip link set dev eth0 address 08:00:27:8b:c0:05
+
+# Blocking site with iptables
+iptables -A INPUT -s www.domain.tld -j DROP
+
+# Checking syslog
+sudo apt install rsyslog
+cat /var/log/syslog
+
+# Boot logs
+journalctl -b
+
+# Dumping network
+tcpdump -i eth0 -s 0 host 161.148.164.31 and port 443 -w file.pcap
+
+# Get exif infos
+exiftool file.jpg
 ```
